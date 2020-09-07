@@ -1,0 +1,28 @@
+.sidebar {
+    border: 1px solid black;
+    height: 100vh;
+    flex: 0.15;
+    padding: 0 0.8rem;
+    color: #b3b3b3;
+    min-width: 200px;
+    background-color: black;
+    box-sizing: border-box;
+}
+.sidebar__logo {
+    height: 5.6rem;
+    width: 9.4rem;
+    object-fit: contain;
+}
+
+.sidebar__title {
+    margin:  0 0.8rem;
+    font-size: 0.85rem;
+    color: #b3b3b3;
+}
+
+.sidebar > hr {
+    border: 0.5px solid #282828;
+    width: 90%;
+    /* padding: 0 0.8rem; */
+    margin: 0.6rem 0.8rem;
+}
