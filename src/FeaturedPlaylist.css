@@ -1,0 +1,29 @@
+.featuredPlaylist {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+}
+
+.heading {
+  font-size: 27px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.featuredPlaylist__container {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 10px 0px;
+  position: relative;
+}
+
+.seeAll {
+  text-transform: uppercase;
+  position: absolute;
+  top: 25px;
+  right: 31px
+}

@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
+    padding: 0rem 1.5rem;
 }
 
 .header__left {
@@ -23,7 +24,13 @@
 
 .header__right {
     display: flex;
+    flex: 0.08;
     align-items: center;
+    background-color: #101a18;
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-right-radius: 25%;
 }
 
 .header__right > h4 {

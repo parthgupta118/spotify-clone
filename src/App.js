@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Login from "./Login";
 import { getTokenFromUrl } from "./spotify";
@@ -9,7 +9,7 @@ import Player from "./Player";
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ user, token, playlists, playlist }, dispatch] = useDataLayerValue();
+  const [{ user, categories, token }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -31,18 +31,25 @@ function App() {
         });
       });
 
-      spotify.getUserPlaylists().then((playlists) => {
+      spotify.getFeaturedPlaylists().then( ({ playlists }) => {
         dispatch({
           type: "SET_PLAYLISTS",
           playlists: playlists,
         });
       });
+
+      // spotify.getCategories({ limit:2 }).then(({ categories } ) =>{
+      //   dispatch({
+      //     type: "SET_CATEGORIES",
+      //     categories: categories
+      //   });
+      // })
     }
 
-    console.log(user);
-    console.log(token);
-    console.log(playlists);
-    console.log(playlist);
+    // console.log(user);
+    // console.log(token);
+    // console.log(playlists);
+    // console.log(playlist);
   });
 
   return (

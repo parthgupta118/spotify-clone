@@ -20,5 +20,14 @@
     padding: 0rem 0.7rem 0rem 0rem;
 }
 
+.sidebarOption--active {
+    background-color: #282828;
+    border-radius: 5px;
+    color: white;
+    width: 90%;
+}
 
+.sidebarOption__playlist--active {
+    color: white;
+}
 

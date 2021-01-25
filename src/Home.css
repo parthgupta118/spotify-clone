@@ -1,0 +1,11 @@
+.home {
+    padding: 2.5rem 1.5rem;
+    flex: 0.85;
+    color: white;
+    height: 100vh;
+    background-color: #122948;
+    background-image: linear-gradient(180deg, rgba(18, 18, 18, 0.4) 5rem, rgba(18, 18, 18, 1) 35rem);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}  

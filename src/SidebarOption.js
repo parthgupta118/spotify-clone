@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 import { useDataLayerValue } from "./DataLayer";
 
 function SidebarOption({ spotify, list, title, Icon }) {
-  const [{ playlist }, dispatch] = useDataLayerValue();
-
+  const [, dispatch] = useDataLayerValue();
+  
   const showPlaylist = () => {
     spotify.getPlaylist(list?.id).then((response) => {
       dispatch({
@@ -18,18 +18,23 @@ function SidebarOption({ spotify, list, title, Icon }) {
   return (
     <div>
       {Icon ? (
-        <NavLink to="/" className="sidebarOption">
-          <Icon className="sidebarOption__icon" />
-          <h4>{title}</h4>
-        </NavLink>
-      ) : (
-        <NavLink
-          className="sidebarOption"
-          to={`/playlist/${list?.id}`}
-          onClick={showPlaylist}
-        >
-          <p>{title}</p>
-        </NavLink>
+
+        <div>
+
+          <NavLink exact to={`/${(title === "Home") ? "" : title.toLowerCase()}`} activeClassName="sidebarOption--active" className="sidebarOption">
+            <Icon className="sidebarOption__icon" />
+            <h4>{title}</h4>
+          </NavLink>
+        </div>
+        ) : (
+          <NavLink
+            className="sidebarOption"
+            activeClassName="sidebarOption__playlist--active"
+            to={`/playlist/${list?.id}`}
+            onClick={showPlaylist}
+          >
+            <p>{title}</p>
+          </NavLink>
       )}
     </div>
   );

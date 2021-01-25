@@ -1,7 +1,7 @@
 //https://developer.spotify.com/documentation/web-playback-sdk/quick-start/
 
 export const authEndpoint = "https://accounts.spotify.com/authorize";
-const redirectUri = "http://localhost:3000/";
+const redirectUri = "https://spotify-clone-c3faf.web.app/";
 const clientId = "4e12322d1a564601a6818aeee9419b97";
 
 const scopes = [

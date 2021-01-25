@@ -1,9 +1,8 @@
 .body {
-  padding: 2.5rem 1.5rem;
+  padding: 2.5rem 0rem;
   flex: 0.85;
   color: white;
   height: 100vh;
-  background: linear-gradient(rgb(91, 87, 115), rgba(0, 0, 0, 1));
   overflow-y: scroll;
   overflow-x: hidden;
   box-sizing: border-box;
@@ -73,8 +72,10 @@
 }
 
 .body__songs {
-  background: linear-gradient(to bottom, rgba(18, 18, 18, 0.2), rgba(18, 18, 18, 1));
+  background: linear-gradient(to bottom, rgba(18, 18, 18, 0.4) 5rem, rgba(18, 18, 18, 1) 20rem);
   margin: 20px -30px;
+  padding: 0rem 1.5rem;
+  min-height: 50vh;
 }
 
 .body__info > img {

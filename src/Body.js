@@ -6,12 +6,15 @@ import FavouriteIcon from "@material-ui/icons/Favorite";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import SongRow from "./SongRow";
 import { useDataLayerValue } from "./DataLayer";
+import { usePalette } from "react-palette";
 
 function Body({ spotify }) {
-  const [{ playlist }, dispatch] = useDataLayerValue();
+  const [{ playlist }] = useDataLayerValue();
+
+  const { data } = usePalette(playlist?.images[0].url);
 
   return (
-    <div className="body">
+    <div className="body" style={{ background: `linear-gradient(${data.darkVibrant}, ${data.vibrant})` }}>
       <Header spotify={spotify} />
 
       <div className="body__info">
@@ -19,12 +22,7 @@ function Body({ spotify }) {
         <div className="body__infoText">
           <strong>PLAYLIST</strong>
           <h1>{playlist?.name}</h1>
-          <p>
-            I don't know how many of you are actually listening to this
-            playlist, but I'll write a summary anyway. I like to listen to a
-            wide mix of music; Alternative, Rock, EDM, and mostly indie music.
-            If that's your style than you will probably enjoy this playlist.
-          </p>
+          <p>{playlist?.description}</p>
         </div>
       </div>
 
@@ -37,7 +35,12 @@ function Body({ spotify }) {
 
         <div className="song__list">
           {playlist?.tracks?.items.map((item) => (
-            <SongRow track={item.track} />
+            <SongRow
+              draggable="true"
+              spotify={spotify}
+              track={item.track}
+              key={item.track.id}
+            />
           ))}
         </div>
       </div>

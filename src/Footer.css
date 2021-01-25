@@ -65,8 +65,13 @@
   justify-content: space-between;
   color: white;
   padding: 0rem 1.8rem;
+  max-width: 200px;
 }
 
 .footer__right * .MuiSlider-root {
   color: #1ed15e;
+}
+
+.MuiGrid-root.MuiGrid-item {
+  align-self: center;
 }
